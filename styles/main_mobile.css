@@ -26,21 +26,39 @@ body {
 
 .logo {
   position: fixed;
-  top: 5%;
-  left: 5%;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  padding: 15px;
+  top: -7%;
+  transition: all .8s ease;
+  background: #1a4172;
+  z-index: 5555;
+}
+
+.logo img {
+  width: 100px;
+  display: block;
+}
+
+.logo.active {
+  top: 0;
+  opacity: 1;
 }
 
 .blue-button {
   display: inline-block;
-  padding: 25px 30px;
+  padding: 10px 15px;
   background: #ade0f8;
   color: #1a4172;
   font-family: 'MontserratBold';
-  font-size: 20px;
-  border-radius: 20px;
+  font-size: 16px;
+  border-radius: 8px;
   cursor: pointer;
+  margin-right: 20px;
+  margin-bottom: 20px;
   transition: all .3s ease 0s !important;
-  transition-delay: 0s !important;
 }
 
 .blue-button:hover {
@@ -50,6 +68,7 @@ body {
 
 .flex {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -58,30 +77,33 @@ body {
 }
 
 .w50 {
-  width: 49%;
+  width: 100%;
 }
 
 .progressive-parent {
   max-height: 100vh;
-  overflow: hidden;
+  top: 50px;
+  position: relative;
+  opacity: 0;
+  transition: all .5s ease .2s;
 }
 
 .progressive-parent .abs-content {
   width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   color: #ade0f8;
-  font-size: 27px;
+  font-size: 15px;
   font-family: 'MontserratBold';
   line-height: 1.5;
+  padding: 90px 15px 30px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .progressive-parent .text {
   color: white;
-  font-size: 20px;
-  margin-left: 20px;
+  font-size: 14px;
   cursor: pointer;
 }
 
@@ -89,17 +111,18 @@ body {
   width: 100%;
   border-bottom: 1px solid #ade0f8;
   outline: none;
-  font-size: 30px;
-  padding: 5px;
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 10px 5px;
   letter-spacing: 2px;
   color: white;
 }
 
 .progressive-parent .input-icon {
-  position: absolute;
+  position: absolute !important;
   left: 5px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) !important;
 }
 
 .progressive-parent .group {
@@ -108,6 +131,7 @@ body {
 
 .progressive-parent .bottom {
   margin-top: 50px;
+  align-items: center;
 }
 
 .progressive-parent .pad-left {
@@ -125,8 +149,17 @@ body {
 
 .progressive-parent .choice li {
   color: white;
-  font-size: 20px;
-  margin: 5px 0;
+  font-size: 14px;
+  margin: 10px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.progressive-parent .choice li .jo-checkbox {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
 }
 
 .progressive-parent .jo-select {
@@ -134,16 +167,18 @@ body {
 }
 
 .progressive-parent .droppable-parent .drop-module {
-  padding: 10px 20px;
+  padding: 5px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: white;
-  font-size: 18px;
+  font-size: 15px;
   border: 1px solid white;
   margin: 5px 0;
   cursor: move;
   background: #1a4172;
+  transition: all 0s !important;
+  transition-delay: 0s !important;
 }
 
 .progressive-parent .droppable-parent .drop-module:active {
@@ -151,19 +186,29 @@ body {
   transition-delay: 0s !important;
 }
 
+.progressive-parent.active {
+  opacity: 1;
+  z-index: 5;
+  top: 0;
+}
+
 .ui-sortable-helper {
   transition-delay: 0s !important;
 }
 
+.preload-parent {
+  transition: all .5s ease;
+}
+
 .progress-section {
   position: absolute;
-  min-height: 100vh;
   width: 100%;
   margin: auto;
   left: 50%;
   transform: translateX(-50%);
   top: 0;
   transition: all .3s ease;
+  height: 100vh;
 }
 
 .progress-section .abs-content * {
@@ -171,6 +216,79 @@ body {
   position: relative;
   opacity: 0;
   transition: all .5s ease;
+}
+
+.preload-parent.hide {
+  opacity: 0;
+}
+
+.preloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 41px;
+  height: 59px;
+}
+
+.preloader .preload-image {
+  position: absolute;
+  animation: pulse 1s infinite;
+}
+
+.preloader .preload-image-2 {
+  position: absolute;
+}
+
+.preloader .preload-image-3 {
+  position: absolute;
+  animation: pulse 1.5s infinite .7s;
+}
+
+.preloader .preload-image-4 {
+  position: absolute;
+  animation: pulse 1.5s infinite 1.3s;
+}
+
+.abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.preload-parent-2 {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: all .3s ease;
+  width: 400px;
+}
+
+.preload-parent-2.active {
+  opacity: 1;
+}
+
+.preload-parent-2.hide {
+  opacity: 0;
+  top: 53%;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
 }
 
 .progress-section.active {

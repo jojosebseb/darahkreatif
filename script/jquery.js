@@ -18,6 +18,7 @@ $('.progress-section').each(function(){
 });
 
 $('.droppable-parent').sortable();
+// $('.droppable-parent').draggable();
 
 $('.jo-checkbox').each(function(){
 
@@ -30,5 +31,6 @@ setInterval(function(){
 
 setInterval(function(){
     $('.progressive-parent').addClass('active');
+    $('.logo').addClass('active');
     $('.preload-parent-2').addClass('hide');
 }, 4000);

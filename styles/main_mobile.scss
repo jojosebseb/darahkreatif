@@ -27,23 +27,41 @@ $main-red: #ee3346;
 
 body{
     background: $main-blue;
+    // overflow: hidden;
 }
 .logo{
     position: fixed;
-    top: 5%;
-    left: 5%;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    padding: 15px;
+    top: -7%;
+    transition: all .8s ease;
+    background: $main-blue;
+
+    z-index: 5555;
+    img{
+        width: 100px;
+        display: block;
+    }
+}
+.logo.active{
+    top: 0;
+    opacity: 1;
 }
 .blue-button{
     display: inline-block;
-    padding: 25px 30px;
+    padding: 10px 15px;
     background: $main-teal;
     color: $main-blue;
     font-family: 'MontserratBold';
-    font-size: 20px;
-    border-radius: 20px;
+    font-size: 16px;
+    border-radius: 8px;
     cursor: pointer;
+    margin-right: 20px;
+    margin-bottom: 20px;
     transition: all .3s ease 0s !important;
-    transition-delay:  0s !important;
 }
 .blue-button:hover{
     background: $main-red;
@@ -51,33 +69,42 @@ body{
 }
 .flex{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 .flex.space{
     justify-content: space-between;
 }
 .w50{
-    width: 49%;
+    width: 100%;
 }
 .progressive-parent{
     max-height: 100vh;
-    overflow: hidden;
+    top: 50px;
+    // transform: translateY(50px);
+    position: relative;
+    // height: 100vh;
+    // overflow: hidden;
+    opacity: 0;
+    transition: all .5s ease .2s;
     .abs-content{
         width: 100%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: $main-teal;
-        font-size: 27px;
+        color: #ade0f8;
+        font-size: 15px;
         font-family: 'MontserratBold';
         line-height: 1.5;
+        padding: 90px 15px 30px;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        // height: 100vh;
     }
 
     .text{
         color: white;
-        font-size: 20px;
-        margin-left: 20px;
+        font-size: 14px;
+        // margin-top: 20px;
         cursor: pointer;
     }
     .full-input{
@@ -85,22 +112,26 @@ body{
         border-bottom: 1px solid $main-teal;
         // margin-top: 30px;
         outline: none;
-        font-size: 30px;
-        padding: 5px;
+        font-size: 16px;
+        margin: 10px 0;
+        padding: 10px 5px;
         letter-spacing: 2px;
         color: white;
+
     }
     .input-icon{
-        position: absolute;
+        position: absolute !important;
         left: 5px;
         top: 50%;
-        transform: translateY(-50%);
+        transform: translateY(-50%) !important;
     }
     .group{
         position: relative;
     }
     .bottom{
         margin-top: 50px;
+        align-items: center;
+        // margin-bottom: 20px;
     }
     .pad-left{
         padding-left: 50px;
@@ -115,8 +146,16 @@ body{
     .choice{
         li{
             color: white;
-            font-size: 20px;
-            margin: 5px 0;
+            font-size: 14px;
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+            .jo-checkbox{
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+            }
         }
     }
     .jo-select{
@@ -124,16 +163,18 @@ body{
     }
     .droppable-parent{
         .drop-module{
-            padding: 10px 20px;
+            padding: 5px 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             color: white;
-            font-size: 18px;
+            font-size: 15px;
             border: 1px solid white;
             margin: 5px 0;
             cursor: move;
             background: $main-blue;
+            transition: all 0s !important;
+            transition-delay: 0s !important;
         }
         .drop-module:active{
             transition: all 0s !important;
@@ -141,12 +182,24 @@ body{
         }
     }
 }
+*{
+    // max-width: 100vw !important;
+}
+.progressive-parent.active{
+    opacity: 1;
+    z-index: 5;
+    // transform: translateY(0);
+    top: 0;
+}
 .ui-sortable-helper{
     transition-delay: 0s !important;
 }
+.preload-parent{
+    transition: all .5s ease;
+}
 .progress-section{
     position: absolute;
-    min-height: 100vh;
+    // min-height: 100vh;
     width: 100%;
     margin: auto;
     left: 50%;
@@ -154,6 +207,7 @@ body{
     top: 0;
     // display: none;
     transition: all .3s ease;
+    height: 100vh;
     .abs-content{
         *{
             transform: translateY(-50px) scale(0.9);
@@ -162,7 +216,72 @@ body{
             transition: all .5s ease;
         }
     }
+}
+.preload-parent.hide{
+    opacity: 0;
+}
+.preloader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 41px;
+    height: 59px;
+    .preload-image{
+        position: absolute;
+        animation: pulse 1s infinite;
+    }
+    .preload-image-2{
+        position: absolute;
+        // animation: pulse 1s infinite 1.5s;
+    }
+    .preload-image-3{
+        position: absolute;
+        animation: pulse 1.5s infinite .7s;
+    }
+    .preload-image-4{
+        position: absolute;
+        animation: pulse 1.5s infinite 1.3s;
+    }
+}
 
+.abs-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.preload-parent-2{
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: all .3s ease;
+    width: 400px;
+
+}
+.preload-parent-2.active{
+    opacity: 1;
+}
+.preload-parent-2.hide{
+    opacity: 0;
+    top: 53%;
+}
+@keyframes pulse {
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    70%{
+        transform: scale(2);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
 }
 .progress-section.active{
     display: block;

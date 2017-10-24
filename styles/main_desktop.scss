@@ -27,20 +27,24 @@ $main-red: #ee3346;
 
 body{
     background: $main-blue;
+    overflow: hidden;
 }
 .logo{
     position: fixed;
     top: 5%;
     left: 5%;
-    width: 150px;
+    width: 120px;
     opacity: 0;
+    top: -7%;
+    transition: all .8s ease;
     img{
         width: 100%;
         display: block;
     }
 }
 .logo.active{
-    opacity: 1
+    top: 5%;
+    opacity: 1;
 }
 .blue-button{
     display: inline-block;
@@ -69,8 +73,13 @@ body{
 }
 .progressive-parent{
     max-height: 100vh;
+    top: 50px;
+    // transform: translateY(50px);
+    position: relative;
+    height: 100vh;
     overflow: hidden;
-    display: none;
+    opacity: 0;
+    transition: all .5s ease .2s;
     .abs-content{
         width: 100%;
         position: absolute;
@@ -100,10 +109,10 @@ body{
         color: white;
     }
     .input-icon{
-        position: absolute;
+        position: absolute !important;
         left: 5px;
         top: 50%;
-        transform: translateY(-50%);
+        transform: translateY(-50%) !important;
     }
     .group{
         position: relative;
@@ -151,7 +160,10 @@ body{
     }
 }
 .progressive-parent.active{
-    display: block;
+    opacity: 1;
+    z-index: 5;
+    // transform: translateY(0);
+    top: 0;
 }
 .ui-sortable-helper{
     transition-delay: 0s !important;
@@ -162,7 +174,8 @@ body{
 .progress-section{
     position: absolute;
     min-height: 100vh;
-    width: 1000px;
+    width: 60vw;
+    max-width: 1000px;
     margin: auto;
     left: 50%;
     transform: translateX(-50%);
@@ -213,13 +226,20 @@ body{
 }
 .preload-parent-2{
     opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     transition: all .3s ease;
+    width: 500px;
+
 }
 .preload-parent-2.active{
     opacity: 1;
 }
 .preload-parent-2.hide{
-    display: none;
+    opacity: 0;
+    top: 53%;
 }
 @keyframes pulse {
     0%{
