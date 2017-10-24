@@ -267,8 +267,56 @@ body {
   width: 400px;
 }
 
+.preload-parent-2 #prop-1 {
+  opacity: 0;
+  left: -20px;
+  position: relative;
+  transition: all .7s ease;
+}
+
+.preload-parent-2 #prop-2 {
+  opacity: 0;
+  left: -20px;
+  position: relative;
+  transition: all .7s ease .3s;
+}
+
+.preload-parent-2 #prop-3 {
+  opacity: 0;
+  top: -50px;
+  position: relative;
+  transition: all .7s ease .5s;
+}
+
+.preload-parent-2 #prop-4 {
+  opacity: 0;
+  left: -20px;
+  position: relative;
+  transition: all .7s ease .7s;
+}
+
 .preload-parent-2.active {
   opacity: 1;
+}
+
+.preload-parent-2.active #prop-1 {
+  opacity: 1;
+  left: 0;
+}
+
+.preload-parent-2.active #prop-2 {
+  opacity: 1;
+  left: 0;
+}
+
+.preload-parent-2.active #prop-3 {
+  opacity: 1;
+  top: 5px;
+}
+
+.preload-parent-2.active #prop-4 {
+  opacity: 1;
+  left: 0;
 }
 
 .preload-parent-2.hide {

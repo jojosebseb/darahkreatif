@@ -228,14 +228,55 @@ body{
     opacity: 0;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 45%;
     transform: translate(-50%, -50%);
-    transition: all .3s ease;
+    transition: all .5s ease;
     width: 500px;
+    #prop-1{
+        opacity: 0;
+        left: -20px;
+        position: relative;
+        transition: all .7s ease;
+    }
+    #prop-2{
+        opacity: 0;
+        left: -20px;
+        position: relative;
+        transition: all .7s ease .3s;
+    }
+    #prop-3{
+        opacity: 0;
+        top: -50px;
+        position: relative;
+        transition: all .7s ease .5s;
+    }
+    #prop-4{
+        opacity: 0;
+        left: -20px;
+        position: relative;
+        transition: all .7s ease .7s;
+    }
 
 }
 .preload-parent-2.active{
     opacity: 1;
+    left: 50%;
+    #prop-1{
+        opacity: 1;
+        left: 0;
+    }
+    #prop-2{
+        opacity: 1;
+        left: 0;
+    }
+    #prop-3{
+        opacity: 1;
+        top: 5px;
+    }
+    #prop-4{
+        opacity: 1;
+        left: 0;
+    }
 }
 .preload-parent-2.hide{
     opacity: 0;

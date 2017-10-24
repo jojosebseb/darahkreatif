@@ -33,4 +33,4 @@ setInterval(function(){
     $('.progressive-parent').addClass('active');
     $('.logo').addClass('active');
     $('.preload-parent-2').addClass('hide');
-}, 4000);
+}, 4100);
