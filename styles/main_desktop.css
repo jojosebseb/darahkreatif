@@ -170,6 +170,10 @@ body {
   transition-delay: 0s !important;
 }
 
+.preload-parent {
+  transition: all .5s ease;
+}
+
 .progress-section {
   position: absolute;
   min-height: 100vh;
@@ -189,7 +193,7 @@ body {
 }
 
 .preload-parent.hide {
-  display: none;
+  opacity: 0;
 }
 
 .preloader {
@@ -223,6 +227,19 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.preload-parent-2 {
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+.preload-parent-2.active {
+  opacity: 1;
+}
+
+.preload-parent-2.hide {
+  display: none;
 }
 
 @keyframes pulse {

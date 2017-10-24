@@ -25,4 +25,10 @@ $('.jo-checkbox').each(function(){
 
 setInterval(function(){
     $('.preload-parent').addClass('hide');
+    $('.preload-parent-2').addClass('active');
 }, 2000);
+
+setInterval(function(){
+    $('.progressive-parent').addClass('active');
+    $('.preload-parent-2').addClass('hide');
+}, 4000);
