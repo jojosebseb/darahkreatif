@@ -1,0 +1,180 @@
+// init start
+*{
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    color: inherit;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: MontserratReg;
+}
+//init end
+
+@font-face {
+    src: url('../fonts/Montserrat-Regular.ttf');
+    font-family: 'MontserratReg';
+}
+@font-face {
+    src: url('../fonts/Montserrat-SemiBold.otf');
+    font-family: 'MontserratBold';
+}
+
+$main-blue: #1a4172;
+$main-teal: #ade0f8;
+$main-red: #ee3346;
+
+body{
+    background: $main-blue;
+}
+.logo{
+    position: fixed;
+    top: 5%;
+    left: 5%;
+}
+.blue-button{
+    display: inline-block;
+    padding: 25px 30px;
+    background: $main-teal;
+    color: $main-blue;
+    font-family: 'MontserratBold';
+    font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all .3s ease 0s !important;
+    transition-delay:  0s !important;
+}
+.blue-button:hover{
+    background: $main-red;
+    color: white;
+}
+.flex{
+    display: flex;
+    align-items: center;
+}
+.flex.space{
+    justify-content: space-between;
+}
+.w50{
+    width: 49%;
+}
+.progressive-parent{
+    max-height: 100vh;
+    overflow: hidden;
+    .abs-content{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $main-teal;
+        font-size: 27px;
+        font-family: 'MontserratBold';
+        line-height: 1.5;
+    }
+
+    .text{
+        color: white;
+        font-size: 20px;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+    .full-input{
+        width: 100%;
+        border-bottom: 1px solid $main-teal;
+        // margin-top: 30px;
+        outline: none;
+        font-size: 30px;
+        padding: 5px;
+        letter-spacing: 2px;
+        color: white;
+    }
+    .input-icon{
+        position: absolute;
+        left: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .group{
+        position: relative;
+    }
+    .bottom{
+        margin-top: 50px;
+    }
+    .pad-left{
+        padding-left: 50px;
+    }
+    form{
+        width: 100%;
+    }
+    .white-title{
+        color: white;
+        font-size: 32px;
+    }
+    .choice{
+        li{
+            color: white;
+            font-size: 20px;
+            margin: 5px 0;
+        }
+    }
+    .jo-select{
+        font-size: 20px;
+    }
+    .droppable-parent{
+        .drop-module{
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            font-size: 18px;
+            border: 1px solid white;
+            margin: 5px 0;
+            cursor: move;
+            background: $main-blue;
+        }
+        .drop-module:active{
+            transition: all 0s !important;
+            transition-delay: 0s !important;
+        }
+    }
+}
+.ui-sortable-helper{
+    transition-delay: 0s !important;
+}
+.progress-section{
+    position: absolute;
+    min-height: 100vh;
+    width: 100%;
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    // display: none;
+    transition: all .3s ease;
+    .abs-content{
+        *{
+            transform: translateY(-50px) scale(0.9);
+            position: relative;
+            opacity: 0;
+            transition: all .5s ease;
+        }
+    }
+
+}
+.progress-section.active{
+    display: block;
+    z-index: 5;
+    .abs-content{
+        *{
+            transform: translateY(0px);
+            opacity: 1;
+            transition: all .5s ease;
+        }
+    }
+}
+#section-1{
+
+}
