@@ -42,7 +42,7 @@
     </div>
     <div class="progressive-parent">
 
-        <section class="progress-section active" id="section-1">
+        <section class="progress-section" id="section-1">
             <div class="abs-content">
 
                 <p>Hi! Welcome to our website.</p>
@@ -53,7 +53,7 @@
                     <div class="blue-button">
                         Start Diagnose
                     </div>
-                    <a href="#" class="text">Cancel if you want us to contact you directly</a>
+                    <div class="text" id="shortCut">Cancel if you want us to contact you directly</div>
                 </div>
             </div>
 
@@ -65,7 +65,7 @@
                 </p>
                 <br>
                 <br>
-                <div  >
+                <div>
                     <input type="text" class="full-input">
                 </div>
                 <div class="bottom flex">
@@ -130,32 +130,47 @@
                 <br>
                 <ul class="choice">
                     <li>
-                        <input type="checkbox" class="jo-checkbox">
-                        I don't have logo or any branding tools
+                        <label for="q1">
+                            <input type="checkbox" class="jo-checkbox" id="q1">
+
+                            I don't have logo or any branding tools
+                        </label>
                     </li>
                     <li>
-                        <input type="checkbox" class="jo-checkbox">
-                        I want to change/redesign my logo
+                        <label for="">
+                            <input type="checkbox" class="jo-checkbox">
+                            I want to change/redesign my logo
+                        </label>
                     </li>
                     <li>
-                        <input type="checkbox" class="jo-checkbox">
-                        I want to do branding for my company
+                        <label for="">
+                            <input type="checkbox" class="jo-checkbox">
+                            I want to do branding for my company
+                        </label>
                     </li>
                     <li>
-                        <input type="checkbox" class="jo-checkbox">
-                        I need to fix my website because it's not well function
+                        <label for="">
+                            <input type="checkbox" class="jo-checkbox">
+                            I need to fix my website because it's not well function
+                        </label>
                     </li>
                     <li>
-                        <input type="checkbox" class="jo-checkbox">
-                        I want to make my brand's social media active and looks good
+                        <label for="">
+                            <input type="checkbox" class="jo-checkbox">
+                            I want to make my brand's social media active and looks good
+                        </label>
                     </li>
                     <li>
-                        <input type="checkbox" class="jo-checkbox">
-                        I need to take pictures for my company needs
+                        <label for="">
+                            <input type="checkbox" class="jo-checkbox">
+                            I need to take pictures for my company needs
+                        </label>
                     </li>
                     <li>
-                        <input type="checkbox" class="jo-checkbox">
-                        I have to print my marketing tools and i need suggestion for the printing
+                        <label for="">
+                            <input type="checkbox" class="jo-checkbox">
+                            I have to print my marketing tools and i need suggestion for the printing
+                        </label>
                     </li>
                 </ul>
                 <div class="bottom flex">
@@ -249,12 +264,50 @@
                     Thank you
                 </div>
                 <p>
-                    We've get all the indivation, we will continue to see your case more detail.
+
+                    We've get all the information, we will continue to see your case more detail.
                 </p>
             </div>
 
         </section>
+
+        <section class="progress-section" id="section-shortCut">
+            <div class="abs-content">
+                <p>
+                    Fill in your information
+                </p>
+                <br>
+                <div class="flex space wrap">
+                    <div class="w100 group">
+                        <!-- <img src="img/icon-1.png" alt="" class="input-icon"> -->
+                        <input type="text" class="full-input" placeholder="Your Name">
+                    </div>
+                    <div class="w50 group">
+                        <img src="img/icon-1.png" alt="" class="input-icon">
+                        <input type="text" class="full-input pad-left">
+                    </div>
+                    <div class="w50 group">
+                        <img src="img/icon-2.png" alt="" class="input-icon">
+                        <input type="text" class="full-input pad-left">
+                    </div>
+                </div>
+                <div class="bottom flex">
+                    <div class="blue-button" id="Finish">
+                        Continue
+                    </div>
+                </div>
+            </div>
+
+        </section>
     </div>
+    <div class="footer">
+        <div class="container">
+            DarahKreatif adalah situs kampanye kreatif untuk memberikan solusi kreatif desain dari Solid Circle - PT Lingkaran Multi Kreasi <br>
+            ©2017 All Rights Reserved. DarahKreatif is a campaign from <a href="http://www.solidcircle.us/">Solid Circle</a>
+        </div>
+    </div>
+
+
 </body>
     <!-- cloud js start -->
     <script type="text/javascript" src="http://js.static.sldclc.com/jquery-3.1.1.min.js"></script>

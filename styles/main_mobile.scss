@@ -336,3 +336,55 @@ body{
 #section-1{
 
 }
+.jo-checkbox-parent{
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    position: relative;
+    .jo-checkbox-box{
+        width: 16px;
+        position: relative;
+        height: 16px;
+        border: 2px solid $main-teal;
+        input{
+            display: none;
+            position: relative;
+            left: -50px;
+
+        }
+    }
+}
+.jo-checkbox-parent.active{
+    .jo-checkbox-box:after{
+        content: "";
+        width: 5px;
+        height: 5px;
+        background: white;
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.footer{
+    position: fixed;
+    z-index: 55555;
+    bottom: 2vh;
+    width: 100%;
+    font-size: 10px;
+    line-height: 15px;
+    opacity: 0.7;
+    font-weight: bold;
+    .container{
+        // max-width: 1000px;
+        // width: 60vw;
+        margin: auto;
+        padding: 0 10px;
+        a{
+            color: white;
+            // padding-left: 5px;
+        }
+    }
+}
