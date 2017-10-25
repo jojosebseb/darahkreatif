@@ -11,6 +11,17 @@ $('.blue-button').on('click', function(){
         $('#section-8').addClass('active');
     }
 });
+$('.skip').on('click', function(){
+    id = $(this).parents('.progress-section').attr('id');
+    lastChar = id[id.length -1];
+    int = parseInt(lastChar)+1;
+    $(this).parents('.progress-section').removeClass('active');
+    $('#section-'+int).addClass('active');
+    if ($(this).attr('id') == 'Finish') {
+        $(this).parents('.progress-section').removeClass('active');
+        $('#section-8').addClass('active');
+    }
+});
 $('#shortCut').on('click', function(){
     $(this).parents('.progress-section').removeClass('active');
     $('#section-shortCut').addClass('active');
